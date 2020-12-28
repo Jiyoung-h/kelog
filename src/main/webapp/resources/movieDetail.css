@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+.movie-info div span, .memo{
+	font-weight: bold;
+}
+.quote{
+	letter-spacing: -1px;
+}
+.quote i{
+	font-size: 1px;
+    position: relative;
+    bottom: 4px;
+    margin: 0px 10px;
+    font-weight: 600;
+}
+.twobtn{
+	right: 100px;
+}

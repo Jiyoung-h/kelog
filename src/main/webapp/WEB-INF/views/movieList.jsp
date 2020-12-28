@@ -27,15 +27,17 @@
         <div class="col-4">
           <div class="card">
           	<div class="row">
+          		<a href="${path }/movie/detail/${row.no}">
           		<img src="${path}/images/${row.image_url}" alt="" class="card-img-top" />
+          		</a>
           	</div>
             <div class="card-body">
-              <h5 class="card-title">${row.title}</h5>
+              <a href="${path }/movie/detail/${row.no}"><h5 class="card-title">${row.title}</h5></a>
               <div class="row">
-              	<div class="col-6"><fmt:formatDate value="${row.releaseDate}" pattern="yyyy.MM.dd"/></div>
+              	<div class="col-6"><fmt:formatDate value="${row.viewDate}" pattern="yyyy.MM.dd"/></div>
               	<div class="col-6">★★★★★</div>
               </div>
-              <div class="quote"><i class="fas fa-quote-left"></i>${row.content}<i class="fas fa-quote-right"></i></div>
+              <div class="quote"><i class="fas fa-quote-left"></i>${row.quote}<i class="fas fa-quote-right"></i></div>
             </div>
           </div>
         </div>

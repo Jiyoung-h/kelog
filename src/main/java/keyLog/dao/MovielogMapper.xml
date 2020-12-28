@@ -7,9 +7,34 @@
     <select id="selectAllMovielog" resultType="MovielogDto">
         SELECT * FROM movielog
     </select>
+    <select id="detailMovielog" resultType="MovielogDto">
+    	SELECT * FROM movielog WHERE no = #{no}
+    </select>
     <insert id="insertMovielog" parameterType="MovielogDto">
  		insert  into movielog (title, releaseDate, genre, director, actor, viewDate, place, withwho, image_url, content, quote)
  		values
  		(#{title}, #{releaseDate}, #{genre}, #{director}, #{actor}, #{viewDate}, #{place}, #{withwho}, #{image_url}, #{content}, #{quote})
  	</insert>
+ 	<update id="updateMovielog" parameterType="MovielogDto">
+ 		update movielog set 
+ 					title=#{title},
+					releaseDate=#{releaseDate},
+					genre=#{genre},
+					director=#{director},
+					actor=#{actor},
+					viewDate=#{viewDate},
+					place=#{place},
+					withwho=#{withwho},
+					image_url=#{image_url},
+					content=#{content},
+					quote=#{quote}
+			where no=#{no}
+ 	</update>
+ 	<select id="file_info" resultType="String">
+ 		select image_url from movielog
+ 		where no=#{no}
+ 	</select>
+ 	<delete id="deleteMovielog">
+ 		delete from movielog where no=#{no}
+ 	</delete>
 </mapper>

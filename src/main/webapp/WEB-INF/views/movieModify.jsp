@@ -14,23 +14,12 @@
 
 </head>
 <script>
-function movielog_write(){
+function movielog_update(){
 	var title = document.form1.title.value;
-	var file1 = document.form1.file1.value;
-	var viewDate = document.form1.viewDate.value;
 	var quote = document.form1.quote.value;
 	if(title == ""){
 		alert("영화 제목을 입력해주세요!");
 		document.form1.title.focus();
-		return;
-	}
-	if(file1 == ""){
-		alert("사진을 첨부해주세요!");
-		return;
-	}
-	if(viewDate == ""){
-		alert("영화를 관람한 날을 입력해주세요!");
-		document.form1.viewDate.focus();
 		return;
 	}
 	if(quote == ""){
@@ -38,7 +27,7 @@ function movielog_write(){
 		document.form1.quote.focus();
 		return;
 	}
-	document.form1.action="${path}/movie/insert";
+	document.form1.action="${path}/movie/update";
 	document.form1.submit();
 }
 </script>
@@ -70,30 +59,31 @@ function movielog_write(){
 				<input type="file" name="file1" id="image" accept="image/*" onchange="setThumbnail(event);"/> 
 				<div id="image_container">
 					<div style="position: absolute; z-index: 99; padding: 134px 6px;"><i class="fas fa-plus-circle"></i><div>영화 포스터 사진을 추가하세요.</div></div>
-					<img id="image_preview" style="position: relative; z-index: 100; width: 263.8px; height: 373px;"/>
+					<img src="${path}/images/${dto.image_url}" id="image_preview" style="position: relative; z-index: 100; width: 263.8px; height: 373px;"/>
 				</div>
 			</div>
 			<div class="col-6 movie-info" style="margin: 0 auto;">
-				<div> <span>제목</span> <input name="title"> </div>
-				<div> <span>장르</span> <input name="genre"> </div>
-				<div> <span>개봉일</span> <input type="date" name="releaseDate"> </div>
-				<div> <span>감독</span> <input name="director"> </div>
-				<div> <span>배우</span> <input name="actor"> </div>
-				<div> <span>장소</span> <input name="place"> </div>
-				<div> <span>관람일</span> <input type="date" name="viewDate"> </div>
-				<div> <span>같이 본 사람</span> <input name="withwho"> </div>
-				<div> <span>나의 한마디</span> <input name="quote"> </div>
+				<div> <span>제목</span> <input name="title" value="${dto.title}"> </div>
+				<div> <span>장르</span> <input name="genre" value="${dto.genre}"> </div>
+				<div> <span>개봉일</span> <input type="date" name="releaseDate" value="${dto.releaseDate}"> </div>
+				<div> <span>감독</span> <input name="director" value="${dto.director}"> </div>
+				<div> <span>배우</span> <input name="actor" value="${dto.actor}"> </div>
+				<div> <span>장소</span> <input name="place" value="${dto.place}"> </div>
+				<div> <span>관람일</span> <input type="date" name="viewDate" value="${dto.viewDate}"> </div>
+				<div> <span>같이 본 사람</span> <input name="withwho" value="${dto.withwho}"> </div>
+				<div> <span>나의 한마디</span> <input name="quote" value="${dto.quote}"> </div>
 			</div>
 		</div>
 		<div style="width: fit-content; margin: 25px auto;">
 			<div class="memo">메모</div>
-			<textarea rows="3" cols="60" name="content" id="content"></textarea>
+			<textarea rows="3" cols="60" name="content" id="content">${dto.content}</textarea>
 		</div>
-		
+		<input type="hidden" name="no" value="${dto.no}">
 		</form>
 		</div>
 	</div>
-	<a onclick="movielog_write()">
+				
+	<a onclick="movielog_update()">
 	<div class="floating-action-button u-flex-center">
   	<div style="color:white; font-weight:900;">완료</div>
 	</div>
