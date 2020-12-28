@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;600;700;900&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+.u-flex-center {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+ * {
+	 transition-property: all;
+	 transition-duration: 0.6s;
+	 transition-timing-function: ease;
+	 font-family: 'Noto Serif KR', serif;
+}
+
+#sideNav {
+   background-color: black;
+    width: 300px;
+    position: fixed;
+    height: 100%;
+    padding: 0px !important;
+}
+ h1 {
+	 color: #fff;
+	 font-weight: 900;
+	 font-family: 'Noto Serif KR', serif;
+	 margin: 50px 20px;
+	 text-align: center;
+	 font-size: 30px;
+}
+h1 a{
+	color: #fff;
+}
+h1 a:hover{
+	 color: #fff;
+	 text-decoration: none;
+}
+.row {
+	margin: 0;
+    width: 100%;
+}
+.btn-1{
+	color: white;
+    display: block;
+    height: 100px;
+    width: 260px;
+    padding: 10px 10px;
+    margin: 20px 20px;
+    border: 1px solid;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    padding: 20px;
+}
+.btn-1:hover{
+	text-decoration: none;
+	color:white;
+}
+.sidebtn{
+	height: fit-content;
+	width: fit-content;
+}
+.floating-action-button {
+  background-color: black;
+  border-radius: 50%;
+  bottom: 25px;
+  box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+  cursor: pointer;
+  height: 56px;
+  position: fixed;
+  right: 25px;
+  transition: all 200ms ease-out;
+  width: 56px;
+}
+.floating-action-button i{
+	color: white;
+	font-size: 22px;
+}
+.floating-action-button:hover {
+  background-color: #888;
+  box-shadow: 0 0 6px rgba(0,0,0,.16), 0 6px 12px rgba(0,0,0,.32);
+}
+.movie{
+	font-family: 'Roboto', sans-serif;
+	font-size: 40px;
+    font-weight: 300;
+    margin: 0px 15px;
+}
+.log{
+	font-size: 23px;
+}
+.movielog{
+	border-bottom: 1px solid #888;
+	margin: 10px 0px;
+}
+.card{
+	margin: 20px 0px;
+	border: 0px;
+    border-radius: 0%;
+}
+.card-img-top{
+	width: 263.8px;
+	height: 373px;
+	border-radius: 0%;
+}
+.card-title{
+	text-align: center;
+	font-weight: 900;
+}
+.card-body div{
+	color: #555;
+	font-weight: 200;
+	text-align: center;
+}
+.quote{
+	letter-spacing: -1px;
+}
+.quote i{
+	font-size: 1px;
+    position: relative;
+    bottom: 4px;
+    margin: 0px 10px;
+    font-weight: 600;
+}
+label { 
+	display: inline-block;
+    padding: .5em .75em;
+    color: white;
+    font-size: inherit;
+    width: 263.8px;
+    height: 373px;
+    line-height: normal;
+    vertical-align: middle;
+    cursor: pointer;
+    position: absolute;
+    border: 1px solid gray;
+} 
+input[type="file"] {
+	position: absolute; 
+	width: 1px; 
+	height: 1px; 
+	padding: 0; 
+	margin: -1px; 
+	overflow: hidden; 
+	clip:rect(0,0,0,0); 
+	border: 0; 
+}
+
+#image_container i{
+	font-size: 50px;
+    padding: 15px 100px;
+}
+#image_container div{
+	text-align: center;
+    font-size: 14px;
+}
+#image_container img{
+	z-index: 100;
+}
+#image_container{
+	position: relative;
+	width: 263.8px; 
+	height: 373px; 
+}
+
+.movie-info div{
+	margin: 10px 0px;
+}
+.movie-info div span{
+	display: inline-block;
+	width: 100px;
+	letter-spacing: -0.5px;
+}
+textarea{
+	resize:none;
+}
+.memo{
+	width: 100px;
+    height: 100%;
+    float: left;
+    padding: 10px 0px;
+    text-align: center;
+}

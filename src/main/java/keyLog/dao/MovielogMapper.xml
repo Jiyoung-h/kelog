@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="keyLog.dao.MovielogMapper">
+    <select id="selectAllMovielog" resultType="MovielogDto">
+        SELECT * FROM movielog
+    </select>
+    <insert id="insertMovielog" parameterType="MovielogDto">
+ 		insert  into movielog (title, releaseDate, genre, director, actor, viewDate, place, withwho, image_url, content, quote)
+ 		values
+ 		(#{title}, #{releaseDate}, #{genre}, #{director}, #{actor}, #{viewDate}, #{place}, #{withwho}, #{image_url}, #{content}, #{quote})
+ 	</insert>
+</mapper>
