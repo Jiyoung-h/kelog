@@ -46,7 +46,6 @@
 <a href="movie/write">
 <div class="floating-action-button u-flex-center">
   <i class="fas fa-plus"></i>
-  </svg>
 </div>
 </a>
 </body>
