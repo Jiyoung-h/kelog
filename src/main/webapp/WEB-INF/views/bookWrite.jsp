@@ -15,20 +15,20 @@
 <%    
     request.setCharacterEncoding("UTF-8");
     String title = request.getParameter("title");
-    String director = request.getParameter("director");
+    String author = request.getParameter("author");
     String image = request.getParameter("image");
-    String actor = request.getParameter("actor");
     image = image.replace("type=m1", "");
 %>
 <script>
 	var t = "<%= title %>";
-	var d = "<%= director %>";
+	var a = "<%= author %>";
 	var i = "<%= image %>";
-	var a = "<%= actor %>";
+	console.log(t);
+	console.log(a);
+	console.log(i);
 	$(document).ready(function() {
         $('#title').val(t);
-        $('#director').val(d);
-        $('#actor').val(a);
+        $('#author').val(a);
         document.getElementById('image_preview').setAttribute("src", i); 
     });
 </script>
@@ -97,8 +97,8 @@ function movielog_write(){
 				<div> <span>제목</span> <input name="title" id="title"> </div>
 				<div> <span>장르</span> <input name="genre"> </div>
 				<div> <span>개봉일</span> <input type="date" name="releaseDate"> </div>
-				<div> <span>감독</span> <input name="director" id="director"> </div>
-				<div> <span>배우</span> <input name="actor" id="actor"> </div>
+				<div> <span>감독</span> <input name="director" id="author"> </div>
+				<div> <span>배우</span> <input name="actor"> </div>
 				<div> <span>장소</span> <input name="place"> </div>
 				<div> <span>관람일</span> <input type="date" name="viewDate"> </div>
 				<div> <span>같이 본 사람</span> <input name="withwho"> </div>
