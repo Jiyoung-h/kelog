@@ -30,8 +30,17 @@ public class MainController {
 	public String movieWrite() {
 		return "movieWrite";
 	}
+	@RequestMapping("/movie/mywrite")
+	public String movieWrite2() {
+		return "movieWrite2";
+	}
 	@RequestMapping("/movie/insert")
 	public String movieInsert(MovielogDto dto) {
+		mMapper.insertMovielog(dto);
+		return "redirect:/movie";
+	}
+	@RequestMapping("/movie/insert2")
+	public String movieInsert2(MovielogDto dto) {
 		String filename="-";
 		if(!dto.getFile1().isEmpty()) {
 			filename=dto.getFile1().getOriginalFilename();

@@ -8,10 +8,22 @@
 <head>
 <meta charset="UTF-8">
 <title>My Moive</title>
-
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <link href="${path}/resources/movieList.css" rel="stylesheet" type="text/css">
+<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://kit.fontawesome.com/81816a43c2.js" crossorigin="anonymous"></script>
+
 </head>
+<script>
+function popup(){
+    if($('.popupselect').css('display') == 'none'){
+    	$('.popupselect').fadeIn();
+   	}else{
+        $('.popupselect').fadeOut();
+    }
+}
+</script>
+
 <body>
 <nav id="sideNav" class="col-lg-3">
 	<h1><a href="/">keylog : 기록</a></h1>
@@ -21,6 +33,12 @@
 </nav>
 <div class="col-lg-9" style="margin-left:300px;">
 <div class="movielog"><span class="movie">MOVIE</span><span class="log">log</span></div>
+<div class="popupselect">
+	<div class="row">
+		<a href="/search" style="display: contents; color:white;"><div class="col-md-5"><div><i class="fas fa-search"></i></div>영화 검색</div></a>
+		<a href="/movie/mywrite" style="display: contents; color:white;"><div class="col-md-5"><div><i class="fas fa-keyboard"></i></div>직접 입력</div></a>
+	</div>
+</div>
 <div class="container">
       <div class="row">
       <c:forEach var="row" items="${list}">
@@ -28,7 +46,15 @@
           <div class="card">
           	<div class="row">
           		<a href="${path }/movie/detail/${row.no}">
-          		<img src="${path}/images/${row.image_url}" alt="" class="card-img-top" />
+          			<c:set var="search" value="${row.search}" />
+          			<c:choose>
+						<c:when test="${search eq '1'}">
+							<img src="${row.image_url}" alt="" class="card-img-top" />
+						</c:when>
+						<c:otherwise>
+							<img src="${path}/images/${row.image_url}" alt="" class="card-img-top" />
+						</c:otherwise>
+					</c:choose>
           		</a>
           	</div>
             <div class="card-body">
@@ -45,7 +71,7 @@
       </div>
     </div>
 </div>
-<a href="movie/write">
+<a onclick="popup();">
 <div class="floating-action-button u-flex-center">
   <i class="fas fa-plus"></i>
 </div>

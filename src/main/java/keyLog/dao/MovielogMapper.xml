@@ -11,9 +11,9 @@
     	SELECT * FROM movielog WHERE no = #{no}
     </select>
     <insert id="insertMovielog" parameterType="MovielogDto">
- 		insert  into movielog (title, releaseDate, genre, director, actor, viewDate, place, withwho, image_url, content, quote)
+ 		insert  into movielog (title, releaseDate, genre, director, actor, viewDate, place, withwho, image_url, content, quote, search)
  		values
- 		(#{title}, #{releaseDate}, #{genre}, #{director}, #{actor}, #{viewDate}, #{place}, #{withwho}, #{image_url}, #{content}, #{quote})
+ 		(#{title}, #{releaseDate}, #{genre}, #{director}, #{actor}, #{viewDate}, #{place}, #{withwho}, #{image_url}, #{content}, #{quote}, #{search})
  	</insert>
  	<update id="updateMovielog" parameterType="MovielogDto">
  		update movielog set 

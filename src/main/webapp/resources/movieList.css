@@ -95,7 +95,7 @@ h1 a:hover{
 }
 .movielog{
 	border-bottom: 1px solid #888;
-	margin: 10px 0px;
+	margin-bottom: 30px;
 }
 .card{
 	margin: 20px 0px;
@@ -188,4 +188,59 @@ textarea{
 a, a:hover{
 	color: black;
 	text-decoration: none;
+}
+.popupselect .col-md-5{
+	border: 3px solid white;
+	margin: 18px;
+	padding: 30px 0px;
+}
+.popupselect .col-md-5 div{
+	margin-bottom: 30px;
+}
+.popupselect i{
+	font-size: 50px;
+}
+.popupselect{   
+	width: 500px;
+	border-radius: 40px;
+    height: 265px;
+    background-color: black;
+    color: white;
+    opacity: 85%;
+    padding: 30px;
+    position: fixed;
+    top: 30%;
+    left: 30%;
+    z-index: 100;
+    vertical-align: middle;
+    text-align: center;
+    display: none;
+}
+#query{
+	margin:0px 10px;
+}
+#button1, #previous, #next{
+	background-color: white;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    color: #666;
+    width:40px;
+}
+.list{
+	margin: 10px 0px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    border-bottom: 1px solid #ccc;
+}
+#result{
+	width:530px;
+	margin: 20px auto;
+}
+.title{
+	font-weight: 900;
+	font-size:14px;
+}
+.buttons{
+	width:85px;
+	margin: 20px auto;
 }

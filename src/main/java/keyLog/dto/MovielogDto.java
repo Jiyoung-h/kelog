@@ -23,6 +23,13 @@ public class MovielogDto {
 	private Date releaseDate;
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date viewDate;
+	private int search;
+	public int getSearch() {
+		return search;
+	}
+	public void setSearch(int search) {
+		this.search = search;
+	}
 	public int getNo() {
 		return no;
 	}

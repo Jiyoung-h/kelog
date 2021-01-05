@@ -39,8 +39,18 @@
 		<div class="row">
 			<div class="col-4" style="margin: 0 auto;">
 				<div id="image_container">
-					<img src="${path}/images/${dto.image_url}"
+					<c:set var="search" value="${dto.search}" />
+          			<c:choose>
+						<c:when test="${search eq '1'}">
+							<img src="${dto.image_url}"
 					id="image_preview" style="position: relative; z-index: 100; width: 263.8px; height: 373px;"/>
+						</c:when>
+						<c:otherwise>
+							<img src="${path}/images/${dto.image_url}"
+					id="image_preview" style="position: relative; z-index: 100; width: 263.8px; height: 373px;"/>
+						</c:otherwise>
+					</c:choose>
+					
 				</div>
 			</div>
 			<div class="col-6 movie-info" style="margin: 0 auto;">
