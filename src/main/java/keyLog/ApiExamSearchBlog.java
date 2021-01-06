@@ -20,12 +20,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class ApiExamSearchBlog {
 	
-	@RequestMapping("/search")
+	@RequestMapping("/movieSearch")
 	public String search() {
-		return "search";
+		return "movie/movieSearch";
 	}
 	
-	@RequestMapping("/search_result")
+	@RequestMapping("/bookSearch")
+	public String bookSearch() {
+		return "book/bookSearch";
+	}
+	
+	@RequestMapping("/movieSearch_result")
 	public String search_result(@RequestParam String query,@RequestParam String start, Model model) {
 		String clientId = "1XfR6vrN_5qI7SvptwX3"; //애플리케이션 클라이언트 아이디값"
         String clientSecret = "vB28C0tH1n"; //애플리케이션 클라이언트 시크릿값"
@@ -45,9 +50,32 @@ public class ApiExamSearchBlog {
         String responseBody = get(apiURL,requestHeaders);
 		
         model.addAttribute("result", responseBody);
-		return "search_result";
+		return "movie/movieSearch_result";
 	}
+	
+	@RequestMapping("/bookSearch_result")
+	public String bookSearch_result(@RequestParam String query,@RequestParam String start, Model model) {
+		String clientId = "1XfR6vrN_5qI7SvptwX3"; //애플리케이션 클라이언트 아이디값"
+        String clientSecret = "vB28C0tH1n"; //애플리케이션 클라이언트 시크릿값"
 
+        try {
+        	query = URLEncoder.encode(query, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException("검색어 인코딩 실패",e);
+        }
+        
+        String apiURL = "https://openapi.naver.com/v1/search/book.json?query=" + query + "&start=" + start;    // json 결과
+        //String apiURL = "https://openapi.naver.com/v1/search/blog.xml?query="+ text;
+
+        Map<String, String> requestHeaders = new HashMap<>();
+        requestHeaders.put("X-Naver-Client-Id", clientId);
+        requestHeaders.put("X-Naver-Client-Secret", clientSecret);
+        String responseBody = get(apiURL,requestHeaders);
+		
+        model.addAttribute("result", responseBody);
+		return "book/bookSearch_result";
+	}
+	
 	private static String get(String apiUrl, Map<String, String> requestHeaders){
         HttpURLConnection con = connect(apiUrl);
         try {

@@ -24,10 +24,10 @@
 			<a href="/movie" class="btn-1">MOVIE</a>
 		</div>
 		<div class="sidebtn">
-			<a href="/movie" class="btn-1">BOOK</a>
+			<a href="/book" class="btn-1">BOOK</a>
 		</div>
 		<div class="sidebtn">
-			<a href="/movie" class="btn-1">ALL</a>
+			<a href="/all" class="btn-1">ALL</a>
 		</div>
 	</nav>
 	<div class="col-lg-9" style="margin-left: 300px;">
@@ -62,6 +62,16 @@
 				<div> <span>장소</span> ${dto.place } </div>
 				<div> <span>관람일</span> <fmt:formatDate value="${dto.viewDate}" pattern="yyyy.MM.dd"/> </div>
 				<div> <span>같이 본 사람</span> ${dto.withwho } </div>
+				<div> <span>별점</span> 
+				<c:set var="star" value="${dto.star}" />
+          			<c:choose>
+						<c:when test="${star eq '1'}">★☆☆☆☆</c:when>
+						<c:when test="${star eq '2'}">★★☆☆☆</c:when>
+						<c:when test="${star eq '3'}">★★★☆☆</c:when>
+						<c:when test="${star eq '4'}">★★★★☆</c:when>
+						<c:when test="${star eq '5'}">★★★★★</c:when>
+					</c:choose>
+				</div>
 				<div class="quote"> <span>나의 한마디</span> <i class="fas fa-quote-left"></i>${dto.quote }<i class="fas fa-quote-right"></i> </div>
 			</div>
 		</div>

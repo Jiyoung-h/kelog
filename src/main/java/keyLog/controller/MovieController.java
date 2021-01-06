@@ -4,20 +4,17 @@ import java.io.File;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import keyLog.dao.BooklogMapper;
 import keyLog.dao.MovielogMapper;
 import keyLog.dao.UserMapper;
 import keyLog.dto.MovielogDto;
 
 @Controller
-public class MainController {
-
-	@Autowired
-	private UserMapper uMapper;
+public class MovieController {
 	
 	@Autowired
 	private MovielogMapper mMapper;
@@ -28,11 +25,11 @@ public class MainController {
 	}
 	@RequestMapping("/movie/write")
 	public String movieWrite() {
-		return "movieWrite";
+		return "movie/movieWrite";
 	}
 	@RequestMapping("/movie/mywrite")
 	public String movieWrite2() {
-		return "movieWrite2";
+		return "movie/movieWrite2";
 	}
 	@RequestMapping("/movie/insert")
 	public String movieInsert(MovielogDto dto) {
@@ -56,29 +53,23 @@ public class MainController {
 		mMapper.insertMovielog(dto);
 		return "redirect:/movie";
 	}
-	@RequestMapping("list")
-	public ModelAndView list(ModelAndView mav) {
-		mav.setViewName("list");
-		mav.addObject("list", uMapper.selectAllUser());
-		return mav;
-	}
 	@RequestMapping("/movie")
 	public ModelAndView movielist(ModelAndView mav) {
-		mav.setViewName("movieList");
+		mav.setViewName("movie/movieList");
 		mav.addObject("list", mMapper.selectAllMovielog());
 		return mav;
 	}
 	@RequestMapping("/movie/detail/{no}")
 	public ModelAndView detail(
 			@PathVariable("no") int no, ModelAndView mav) {
-		mav.setViewName("/movieDetail");
+		mav.setViewName("movie/movieDetail");
 		mav.addObject("dto", mMapper.detailMovielog(no));
 		return mav;
 	}
 	@RequestMapping("/movie/modify/{no}")
 	public ModelAndView modify(
 			@PathVariable("no") int no, ModelAndView mav) {
-		mav.setViewName("/movieModify");
+		mav.setViewName("movie/movieModify");
 		mav.addObject("dto", mMapper.detailMovielog(no));
 		return mav;
 	}

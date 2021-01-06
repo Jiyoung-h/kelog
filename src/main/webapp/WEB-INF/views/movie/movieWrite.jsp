@@ -102,6 +102,15 @@ function movielog_write(){
 				<div> <span>관람일</span> <input type="date" name="viewDate"> </div>
 				<div> <span>같이 본 사람</span> <input name="withwho"> </div>
 				<div> <span>나의 한마디</span> <input name="quote"> </div>
+				<div> <span>별점</span> 
+					<select name="star">
+					  <option value="1">★</option>
+					  <option value="2">★★</option>
+					  <option value="3">★★★</option>
+					  <option value="4">★★★★</option>
+					  <option value="5">★★★★★</option>
+					</select> 
+				</div>
 			</div>
 		</div>
 		<div style="width: fit-content; margin: 25px auto;">

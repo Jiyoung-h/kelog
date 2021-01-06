@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="keyLog.dao.BooklogMapper">
+    <select id="selectAllBooklog" resultType="BooklogDto">
+        SELECT * FROM Booklog
+    </select>
+    <select id="detailBooklog" resultType="BooklogDto">
+    	SELECT * FROM Booklog WHERE no = #{no}
+    </select>
+    <insert id="insertBooklog" parameterType="BooklogDto">
+ 		insert  into Booklog (title, releaseDate, genre, author, viewDate, image_url, content, quote, search, star, publisher)
+ 		values
+ 		(#{title}, #{releaseDate}, #{genre}, #{author}, #{viewDate}, #{image_url}, #{content}, #{quote}, #{search}, #{star}, #{publisher})
+ 	</insert>
+ 	<update id="updateBooklog" parameterType="BooklogDto">
+ 		update Booklog set 
+ 					title=#{title},
+					releaseDate=#{releaseDate},
+					genre=#{genre},
+					author=#{author},
+					viewDate=#{viewDate},
+					image_url=#{image_url},
+					content=#{content},
+					quote=#{quote},
+					star=#{star},
+					publisher=#{publisher}
+			where no=#{no}
+ 	</update>
+ 	<select id="file_info" resultType="String">
+ 		select image_url from Booklog
+ 		where no=#{no}
+ 	</select>
+ 	<delete id="deleteBooklog">
+ 		delete from Booklog where no=#{no}
+ 	</delete>
+</mapper>

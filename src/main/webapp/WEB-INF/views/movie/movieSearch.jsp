@@ -19,7 +19,7 @@ $(function(){
 	function search(query, start){
 		$.ajax({
 			type: "post",
-			url: "search_result",
+			url: "movieSearch_result",
 			data: param={"query":query, "start":start},
 			success: function(result){
 				var jsonObj = JSON.parse(result);

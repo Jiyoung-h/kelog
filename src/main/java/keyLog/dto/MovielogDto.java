@@ -24,6 +24,13 @@ public class MovielogDto {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date viewDate;
 	private int search;
+	private int star;
+	public int getStar() {
+		return star;
+	}
+	public void setStar(int star) {
+		this.star = star;
+	}
 	public int getSearch() {
 		return search;
 	}
