@@ -19,7 +19,7 @@
 ||```gradle```||
 
 ## 실행화면
-
+![screenshot](./img/1.png)
 ## 느낀점
 
 ---
