@@ -21,14 +21,18 @@
 ## 실행화면
 ### 목록
 <img src="./img/1.png" width="600">
+
 ### 검색
 <img src="./img/2.png" width="600">
+
 ### 검색 영화 삽입
 <img src="./img/3.png" width="600">
+
 ### 직접 작성
 <img src="./img/6.png" width="600">
+
 ### 상세 페이지
-<img src="./img/4.png" width="400">
+<img src="./img/4.png" width="600">
 
 ## 느낀점
 
